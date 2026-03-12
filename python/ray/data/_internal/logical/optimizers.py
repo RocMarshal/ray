@@ -9,11 +9,15 @@ from ray.data._internal.logical.interfaces import (
     Rule,
 )
 from ray.data._internal.logical.rules import (
+    ApplyRuntimeFeedbackRule,
     CombineShuffles,
     ConfigureMapTaskMemoryUsingOutputSize,
+    DeriveReservationRatioRule,
+    DeriveShufflePartitionsRule,
     FuseOperators,
     InheritBatchFormatRule,
     InheritTargetMaxBlockSizeRule,
+    JoinReorderRule,
     LimitPushdownRule,
     PredicatePushdown,
     ProjectionPushdown,
@@ -38,6 +42,10 @@ _PHYSICAL_RULESET = Ruleset(
         SetReadParallelismRule,
         FuseOperators,
         ConfigureMapTaskMemoryUsingOutputSize,
+        DeriveReservationRatioRule,
+        DeriveShufflePartitionsRule,
+        JoinReorderRule,
+        ApplyRuntimeFeedbackRule,
     ]
 )
 

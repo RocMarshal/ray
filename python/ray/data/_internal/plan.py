@@ -114,10 +114,17 @@ class ExecutionPlan:
         plan = self._logical_plan
 
         sections = []
-        for title, convert_fn in zip(titles, convert_fns):
+        optimized_logical_dag = None
+        for idx, (title, convert_fn) in enumerate(
+            zip(titles, convert_fns)
+        ):
 
             # 2. Convert plan to new plan
             plan = convert_fn(plan)
+
+            # Keep a reference to the optimized logical plan DAG for stats
+            if idx == 1:
+                optimized_logical_dag = plan.dag
 
             # 3. Generate plan str from new plan.
             plan_str, _ = self.generate_plan_string(plan.dag, show_op_repr=True)
@@ -125,6 +132,26 @@ class ExecutionPlan:
             banner = f"\n-------- {title} --------\n"
             section = f"{banner}{plan_str}"
             sections.append(section)
+
+        # 4. CBO statistics summary (best-effort, never raises)
+        try:
+            dag = optimized_logical_dag or self._logical_plan.dag
+            stats_lines: List[str] = []
+            for op in dag.post_order_iter():
+                op_stats = op.infer_statistics()
+                if op_stats is not None and op_stats.is_available():
+                    stats_lines.append(
+                        f"  {op.name}: {op_stats.to_log_string()}"
+                    )
+                else:
+                    stats_lines.append(
+                        f"  {op.name}: [statistics unavailable]"
+                    )
+            if stats_lines:
+                banner = "\n-------- Statistics Summary --------\n"
+                sections.append(banner + "\n".join(stats_lines))
+        except Exception:
+            pass  # never let stats break explain()
 
         return "".join(sections)
 

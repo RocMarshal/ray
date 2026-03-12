@@ -461,6 +461,10 @@ class ParquetDatasource(Datasource):
             local_scheduling=self._local_scheduling,
         )
 
+        # Expose sampled file infos so CBO can extract column statistics
+        # from Parquet footer metadata at zero additional I/O cost.
+        self._sampled_file_infos = sampled_file_infos
+
         self._encoding_ratio = _estimate_files_encoding_ratio(
             sampled_fragments,
             sampled_file_infos,

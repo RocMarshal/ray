@@ -29,6 +29,32 @@ __all__ = [
 logger = logging.getLogger(__name__)
 
 
+# ---- CBO: Operation name -> selectivity estimator key mapping ----
+_OP_TO_SELECTIVITY_KEY = None
+
+
+def _get_op_selectivity_key_map():
+    """Lazy init: map ``expressions.Operation`` enum values to the short
+    operator keys understood by ``estimate_selectivity_from_column_stats``."""
+    global _OP_TO_SELECTIVITY_KEY
+    if _OP_TO_SELECTIVITY_KEY is not None:
+        return _OP_TO_SELECTIVITY_KEY
+    try:
+        from ray.data.expressions import Operation
+
+        _OP_TO_SELECTIVITY_KEY = {
+            Operation.EQ: "EQ",
+            Operation.NE: "NE",
+            Operation.GT: "GT",
+            Operation.GE: "GTE",
+            Operation.LT: "LT",
+            Operation.LE: "LTE",
+        }
+    except Exception:
+        _OP_TO_SELECTIVITY_KEY = {}
+    return _OP_TO_SELECTIVITY_KEY
+
+
 class AbstractMap(AbstractOneToOne):
     """Abstract class for logical operators that should be converted to physical
     MapOperator.
@@ -309,6 +335,80 @@ class Filter(AbstractUDFMap):
 
             return f"{op_name}({expr_str})"
         return super()._get_operator_name(op_name, fn)
+
+    # ---- CBO: statistics inference ----
+
+    def infer_statistics(self):
+        """Return input statistics scaled by the estimated selectivity."""
+        if not self.input_dependencies:
+            return None
+        input_stats = self.input_dependencies[0].infer_statistics()
+        if input_stats is None:
+            return None
+        selectivity = self._estimate_filter_selectivity(input_stats)
+        return input_stats.scale(selectivity)
+
+    def _estimate_filter_selectivity(self, input_stats):
+        """Estimate filter selectivity from expression predicates + column stats."""
+        if self.predicate_expr is not None:
+            try:
+                return self._selectivity_from_expr(
+                    self.predicate_expr, input_stats
+                )
+            except Exception as e:
+                logger.debug("CBO: selectivity estimation failed: %s", e)
+        # UDF-based filter or estimation failed -> conservative default
+        return 0.5
+
+    def _selectivity_from_expr(self, expr, input_stats):
+        """Recursively estimate selectivity from an ``Expr`` tree."""
+        from ray.data.expressions import BinaryExpr, ColumnExpr, LiteralExpr
+
+        if not isinstance(expr, BinaryExpr):
+            return 0.5
+
+        op_map = _get_op_selectivity_key_map()
+        from ray.data.expressions import Operation
+
+        # AND / OR compound predicates
+        if expr.op == Operation.AND:
+            left_sel = self._selectivity_from_expr(expr.left, input_stats)
+            right_sel = self._selectivity_from_expr(expr.right, input_stats)
+            return left_sel * right_sel
+        if expr.op == Operation.OR:
+            left_sel = self._selectivity_from_expr(expr.left, input_stats)
+            right_sel = self._selectivity_from_expr(expr.right, input_stats)
+            return 1.0 - (1.0 - left_sel) * (1.0 - right_sel)
+
+        # Simple comparison: col <op> literal
+        sel_key = op_map.get(expr.op)
+        if sel_key is None:
+            return 0.5
+
+        col_name = None
+        literal_value = None
+        if isinstance(expr.left, ColumnExpr) and isinstance(
+            expr.right, LiteralExpr
+        ):
+            col_name = expr.left.name
+            literal_value = expr.right.value
+        elif isinstance(expr.right, ColumnExpr) and isinstance(
+            expr.left, LiteralExpr
+        ):
+            col_name = expr.right.name
+            literal_value = expr.left.value
+        else:
+            return 0.5
+
+        col_stat = input_stats.get_column_stat(col_name)
+        from ray.data._internal.cbo_stats.operator_statistics import (
+            estimate_selectivity_from_column_stats,
+        )
+
+        sel = estimate_selectivity_from_column_stats(
+            col_name, sel_key, literal_value, col_stat
+        )
+        return sel if sel is not None else 0.5
 
 
 class Project(AbstractMap, LogicalOperatorSupportsPredicatePassThrough):

@@ -59,6 +59,24 @@ class AbstractOneToOne(LogicalOperator):
     def input_dependency(self) -> LogicalOperator:
         return self.input_dependencies[0]
 
+    # ---- CBO: default statistics propagation ----
+
+    def infer_statistics(self):
+        """Propagate input statistics if this operator does not modify row count.
+
+        Operators that *can* modify the number of rows (e.g. Filter, FlatMap)
+        return ``None`` by default; they should override this method to
+        provide a more precise estimate.
+        """
+        if not self.input_dependencies:
+            return None
+        input_stats = self.input_dependencies[0].infer_statistics()
+        if input_stats is None:
+            return None
+        if not self.can_modify_num_rows:
+            return input_stats  # row-preserving op -> pass-through
+        return None  # row count may change -> conservative
+
 
 @dataclass(frozen=True, repr=False, eq=False)
 class Limit(AbstractOneToOne, LogicalOperatorSupportsPredicatePassThrough):
@@ -121,6 +139,20 @@ class Limit(AbstractOneToOne, LogicalOperatorSupportsPredicatePassThrough):
         # Pushing filter through limit is safe: Filter(Limit(data, n), pred)
         # becomes Limit(Filter(data, pred), n), which filters earlier
         return PredicatePassThroughBehavior.PASSTHROUGH
+
+    # ---- CBO: statistics inference ----
+
+    def infer_statistics(self):
+        """Limit statistics: scale input stats by ``min(1, limit / input_rows)``."""
+        if not self.input_dependencies:
+            return None
+        input_stats = self.input_dependencies[0].infer_statistics()
+        if input_stats is None:
+            return None
+        if input_stats.num_rows is not None and input_stats.num_rows > 0:
+            ratio = min(1.0, self.limit / input_stats.num_rows)
+            return input_stats.scale(ratio)
+        return input_stats
 
 
 @dataclass(frozen=True, repr=False, eq=False)

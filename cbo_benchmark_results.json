@@ -1,0 +1,21 @@
+{
+  "mode": "per-rule",
+  "config": {
+    "num_rows": 50000,
+    "repetitions": 1
+  },
+  "results": [
+    {
+      "rule_name": "PredicatePushdown",
+      "rule_category": "RBO",
+      "optimization_goal": "Throughput",
+      "pipeline_desc": "range->[filter <-> map(heavy)]",
+      "baseline_label": "Filter after map",
+      "optimized_label": "Filter before map",
+      "baseline_time_s": 1.62,
+      "optimized_time_s": 0.276,
+      "improvement_pct": 83.0,
+      "sweep_detail": null
+    }
+  ]
+}

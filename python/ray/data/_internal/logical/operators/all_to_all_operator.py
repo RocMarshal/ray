@@ -64,6 +64,14 @@ class AbstractAllToAll(LogicalOperator):
     def num_outputs(self) -> Optional[int]:
         return self._num_outputs
 
+    # ---- CBO: statistics pass-through ----
+
+    def infer_statistics(self):
+        """AllToAll operators preserve row count; pass input stats through."""
+        if not self.input_dependencies:
+            return None
+        return self.input_dependencies[0].infer_statistics()
+
 
 class RandomizeBlocks(AbstractAllToAll, LogicalOperatorSupportsPredicatePassThrough):
     """Logical operator for randomize_block_order."""
@@ -178,6 +186,29 @@ class Repartition(AbstractAllToAll, LogicalOperatorSupportsPredicatePassThrough)
     def predicate_passthrough_behavior(self) -> PredicatePassThroughBehavior:
         # Repartition doesn't affect filtering correctness
         return PredicatePassThroughBehavior.PASSTHROUGH
+
+    # ---- CBO: update num_blocks ----
+
+    def infer_statistics(self):
+        """Pass through input stats but update ``num_blocks`` to the target."""
+        from ray.data._internal.cbo_stats.operator_statistics import (
+            OperatorStatistics,
+        )
+
+        stats = super().infer_statistics()
+        if stats is not None and self._num_outputs is not None:
+            stats = OperatorStatistics(
+                num_rows=stats.num_rows,
+                size_bytes=stats.size_bytes,
+                num_blocks=self._num_outputs,
+                avg_row_bytes=stats.avg_row_bytes,
+                column_stats=stats.column_stats,
+                selectivity=stats.selectivity,
+                amplification_ratio=stats.amplification_ratio,
+                skew_factor=stats.skew_factor,
+                confidence=stats.confidence,
+            )
+        return stats
 
 
 class Sort(AbstractAllToAll, LogicalOperatorSupportsPredicatePassThrough):

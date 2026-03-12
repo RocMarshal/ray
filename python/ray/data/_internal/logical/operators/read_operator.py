@@ -18,6 +18,10 @@ from ray.data.context import DataContext
 from ray.data.datasource.datasource import Datasource, Reader
 from ray.data.expressions import Expr
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 __all__ = [
     "Read",
 ]
@@ -80,6 +84,97 @@ class Read(
         execution.
         """
         return self._cached_output_metadata.metadata
+
+    def infer_statistics(self):
+        """Infer output statistics from datasource metadata.
+
+        For Parquet sources this also extracts column-level min/max/null_count
+        from the footer at zero additional I/O cost.
+        """
+        from ray.data._internal.cbo_stats.operator_statistics import (
+            ColumnStatistics,
+            ConfidenceLevel,
+            OperatorStatistics,
+        )
+
+        metadata = self.infer_metadata()
+        if metadata.num_rows is None and metadata.size_bytes is None:
+            return None
+
+        column_stats = {}
+        # Try to extract Parquet column-level statistics
+        try:
+            column_stats = self._extract_parquet_column_stats()
+        except Exception as e:
+            logger.debug("CBO: failed to extract Parquet column stats: %s", e)
+
+        return OperatorStatistics(
+            num_rows=metadata.num_rows,
+            size_bytes=metadata.size_bytes,
+            column_stats=column_stats,
+            confidence=ConfidenceLevel.HIGH.value,
+        )
+
+    def _extract_parquet_column_stats(self):
+        """Best-effort extraction of column statistics from Parquet metadata."""
+        from ray.data._internal.cbo_stats.operator_statistics import (
+            ColumnStatistics,
+            ConfidenceLevel,
+        )
+        from ray.data._internal.datasource.parquet_stat_extractor import (
+            extract_column_stats_from_parquet_metadata,
+        )
+
+        ds = self.datasource
+        # ParquetDatasource stores sampled _ParquetFileInfo objects
+        file_infos = getattr(ds, "_sampled_file_infos", None)
+        if not file_infos:
+            return {}
+
+        all_column_stats = {}
+        for fi in file_infos:
+            pq_meta = getattr(fi, "metadata", None)
+            if pq_meta is None:
+                continue
+            try:
+                schema = pq_meta.schema.to_arrow_schema()
+            except Exception:
+                continue
+            col_dict = extract_column_stats_from_parquet_metadata(pq_meta, schema)
+            for col_name, stat in col_dict.items():
+                if col_name not in all_column_stats:
+                    all_column_stats[col_name] = ColumnStatistics(
+                        name=col_name,
+                        min_value=stat.get("min"),
+                        max_value=stat.get("max"),
+                        null_count=stat.get("null_count"),
+                        distinct_count=stat.get("distinct_count"),
+                        encoding=stat.get("encoding"),
+                        compression=stat.get("compression"),
+                        confidence=ConfidenceLevel.HIGH.value,
+                    )
+                else:
+                    # Merge: widen min/max, accumulate null_count
+                    existing = all_column_stats[col_name]
+                    try:
+                        new_min = stat.get("min")
+                        new_max = stat.get("max")
+                        if new_min is not None and (
+                            existing.min_value is None
+                            or new_min < existing.min_value
+                        ):
+                            existing.min_value = new_min
+                        if new_max is not None and (
+                            existing.max_value is None
+                            or new_max > existing.max_value
+                        ):
+                            existing.max_value = new_max
+                    except TypeError:
+                        pass
+                    nc = stat.get("null_count")
+                    if nc is not None and existing.null_count is not None:
+                        existing.null_count += nc
+        return all_column_stats
 
     def infer_schema(self):
         return self._cached_output_metadata.schema

@@ -15,14 +15,22 @@ from .set_read_parallelism import (
     SetReadParallelismRule,
     compute_additional_split_factor,
 )
+from .derive_reservation_ratio_rule import DeriveReservationRatioRule
+from .derive_shuffle_partitions_rule import DeriveShufflePartitionsRule
+from .join_reorder_rule import JoinReorderRule
+from .apply_runtime_feedback_rule import ApplyRuntimeFeedbackRule
 
 __all__ = [
+    "ApplyRuntimeFeedbackRule",
     "CombineShuffles",
     "ConfigureMapTaskMemoryRule",
     "ConfigureMapTaskMemoryUsingOutputSize",
+    "DeriveReservationRatioRule",
+    "DeriveShufflePartitionsRule",
     "FuseOperators",
     "InheritBatchFormatRule",
     "InheritTargetMaxBlockSizeRule",
+    "JoinReorderRule",
     "LimitPushdownRule",
     "PredicatePushdown",
     "ProjectionPushdown",

@@ -7,6 +7,7 @@ from ray.data.block import BlockMetadata
 from ray.data.expressions import Expr
 
 if TYPE_CHECKING:
+    from ray.data._internal.cbo_stats.operator_statistics import OperatorStatistics
     from ray.data.block import Schema
 
 
@@ -103,6 +104,19 @@ class LogicalOperator(Operator, ABC):
 
     def __str__(self) -> str:
         return repr(self)
+
+    def infer_statistics(self) -> Optional["OperatorStatistics"]:
+        """Infer output statistics for CBO.
+
+        Returns an :class:`OperatorStatistics` describing the expected output
+        of this operator (row count, byte size, column-level stats, etc.).
+        Returns ``None`` when statistics are unavailable.
+
+        Subclasses should override this method to provide operator-specific
+        statistics inference.  The default implementation returns ``None``
+        so that the system gracefully degrades to rule-based optimization.
+        """
+        return None
 
     def infer_schema(self) -> Optional["Schema"]:
         """Returns the inferred schema of the output blocks."""

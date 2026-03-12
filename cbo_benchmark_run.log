@@ -1,0 +1,613 @@
+2026-03-22 10:15:14,769	INFO worker.py:2013 -- Started a local Ray instance.
+/Users/windwheel/Documents/gitrepo/ray/.test_venv/lib/python3.12/site-packages/ray/_private/worker.py:2052: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+2026-03-22 10:15:16,286	INFO logging.py:392 -- Registered dataset logger for dataset dataset_4_0
+2026-03-22 10:15:16,307	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_4_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:16,307	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_4_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange] -> TaskPoolMapOperator[MapBatches(<lambda>)] -> TaskPoolMapOperator[MapBatches(<lambda>)] -> TaskPoolMapOperator[MapBatches(_heavy_udf)]
+2026-03-22 10:15:16,327	WARNING resource_manager.py:141 -- ⚠️  Ray's object store is configured to use only 23.7% of available memory (2.0GiB out of 8.4GiB total). For optimal Ray Data performance, we recommend setting the object store to at least 50% of available memory. You can do this by setting the 'object_store_memory' parameter when calling ray.init() or by setting the RAY_DEFAULT_OBJECT_STORE_MEMORY_PROPORTION environment variable.
+2026-03-22 10:15:16,328	INFO __init__.py:56 -- Progress will be logged because stdout is a non-interactive terminal.
+2026-03-22 10:15:16,794	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_4_0 =======
+2026-03-22 10:15:16,794	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:16,794	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:16,794	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:16,794	INFO logging_progress.py:231 -- ReadRange: 0/1
+2026-03-22 10:15:16,794	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:16,794	INFO logging_progress.py:231 -- MapBatches(<lambda>): 0/1
+2026-03-22 10:15:16,795	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-03-22 10:15:16,795	INFO logging_progress.py:231 -- MapBatches(<lambda>): 0/1
+2026-03-22 10:15:16,795	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-03-22 10:15:16,795	INFO logging_progress.py:231 -- MapBatches(_heavy_udf): 0/1
+2026-03-22 10:15:16,795	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-03-22 10:15:16,795	INFO logging_progress.py:192 -- ============================================
+2026-03-22 10:15:19,654	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_4_0 execution finished in 3.34 seconds
+2026-03-22 10:15:19,746	INFO logging.py:392 -- Registered dataset logger for dataset dataset_10_0
+2026-03-22 10:15:19,754	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_10_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:19,754	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_10_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange] -> TaskPoolMapOperator[MapBatches(<lambda>)] -> TaskPoolMapOperator[MapBatches(<lambda>)] -> TaskPoolMapOperator[MapBatches(_heavy_udf)]
+2026-03-22 10:15:19,822	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_10_0 =======
+2026-03-22 10:15:19,823	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:19,823	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:19,823	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:19,823	INFO logging_progress.py:231 -- ReadRange: 0/1
+2026-03-22 10:15:19,823	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:19,823	INFO logging_progress.py:231 -- MapBatches(<lambda>): 0/1
+2026-03-22 10:15:19,823	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-03-22 10:15:19,823	INFO logging_progress.py:231 -- MapBatches(<lambda>): 0/1
+2026-03-22 10:15:19,823	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-03-22 10:15:19,823	INFO logging_progress.py:231 -- MapBatches(_heavy_udf): 0/1
+2026-03-22 10:15:19,823	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-03-22 10:15:19,823	INFO logging_progress.py:192 -- =============================================
+2026-03-22 10:15:20,956	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_10_0 execution finished in 1.20 seconds
+2026-03-22 10:15:21,018	INFO logging.py:392 -- Registered dataset logger for dataset dataset_16_0
+2026-03-22 10:15:21,021	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_16_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:21,021	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_16_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(<lambda>)->MapBatches(<lambda>)->MapBatches(_heavy_udf)]
+2026-03-22 10:15:21,090	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_16_0 =======
+2026-03-22 10:15:21,090	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:21,090	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:21,090	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:21,090	INFO logging_progress.py:231 -- ReadRange->MapBatches(<lambda>)->MapBatches(<lambda>)->MapBatches(_heavy_udf): 0/1
+2026-03-22 10:15:21,090	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:21,091	INFO logging_progress.py:192 -- =============================================
+2026-03-22 10:15:21,275	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_16_0 execution finished in 0.25 seconds
+2026-03-22 10:15:21,391	INFO logging.py:392 -- Registered dataset logger for dataset dataset_22_0
+2026-03-22 10:15:21,399	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_22_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:21,400	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_22_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(<lambda>)->MapBatches(<lambda>)->MapBatches(_heavy_udf)]
+2026-03-22 10:15:21,483	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_22_0 =======
+2026-03-22 10:15:21,484	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:21,484	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:21,484	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:21,484	INFO logging_progress.py:231 -- ReadRange->MapBatches(<lambda>)->MapBatches(<lambda>)->MapBatches(_heavy_udf): 0/1
+2026-03-22 10:15:21,484	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:21,484	INFO logging_progress.py:192 -- =============================================
+2026-03-22 10:15:21,639	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_22_0 execution finished in 0.24 seconds
+/Users/windwheel/Documents/gitrepo/ray/.test_venv/lib/python3.12/site-packages/ray/data/dataset.py:1589: UserWarning: Use 'expr' instead of 'fn' when possible for performant filters.
+  warnings.warn(
+2026-03-22 10:15:21,751	INFO logging.py:392 -- Registered dataset logger for dataset dataset_27_0
+2026-03-22 10:15:21,764	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_27_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:21,764	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_27_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(_extra_heavy_udf)->Filter(<lambda>)]
+2026-03-22 10:15:21,812	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_27_0 =======
+2026-03-22 10:15:21,812	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:21,812	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:21,812	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:21,812	INFO logging_progress.py:231 -- ReadRange->MapBatches(_extra_heavy_udf)->Filter(<lambda>): 0/1
+2026-03-22 10:15:21,813	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:21,813	INFO logging_progress.py:192 -- =============================================
+2026-03-22 10:15:22,546	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_27_0 execution finished in 0.78 seconds
+2026-03-22 10:15:22,591	INFO logging.py:392 -- Registered dataset logger for dataset dataset_32_0
+2026-03-22 10:15:22,594	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_32_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:22,594	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_32_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(_extra_heavy_udf)->Filter(<lambda>)]
+2026-03-22 10:15:22,629	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_32_0 =======
+2026-03-22 10:15:22,629	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:22,629	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:22,629	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:22,629	INFO logging_progress.py:231 -- ReadRange->MapBatches(_extra_heavy_udf)->Filter(<lambda>): 0/1
+2026-03-22 10:15:22,629	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:22,629	INFO logging_progress.py:192 -- =============================================
+[33m(raylet)[0m [2026-03-22 10:15:22,772 E 92422 72875766] (raylet) file_system_monitor.cc:116: /tmp/ray/session_2026-03-22_10-15-11_481973_92385 is over 95% full, available space: 2.99559 GB; capacity: 460.432 GB. Object creation will fail if spilling is required.
+2026-03-22 10:15:22,832	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_32_0 execution finished in 0.24 seconds
+2026-03-22 10:15:22,875	INFO logging.py:392 -- Registered dataset logger for dataset dataset_37_0
+2026-03-22 10:15:22,878	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_37_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:22,878	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_37_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->Filter(<lambda>)->MapBatches(_extra_heavy_udf)]
+2026-03-22 10:15:22,912	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_37_0 =======
+2026-03-22 10:15:22,912	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:22,912	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:22,912	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:22,912	INFO logging_progress.py:231 -- ReadRange->Filter(<lambda>)->MapBatches(_extra_heavy_udf): 0/1
+2026-03-22 10:15:22,912	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:22,912	INFO logging_progress.py:192 -- =============================================
+2026-03-22 10:15:23,087	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_37_0 execution finished in 0.21 seconds
+2026-03-22 10:15:23,138	INFO logging.py:392 -- Registered dataset logger for dataset dataset_42_0
+2026-03-22 10:15:23,141	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_42_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:23,141	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_42_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->Filter(<lambda>)->MapBatches(_extra_heavy_udf)]
+2026-03-22 10:15:23,177	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_42_0 =======
+2026-03-22 10:15:23,177	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:23,178	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:23,178	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:23,178	INFO logging_progress.py:231 -- ReadRange->Filter(<lambda>)->MapBatches(_extra_heavy_udf): 0/1
+2026-03-22 10:15:23,178	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:23,178	INFO logging_progress.py:192 -- =============================================
+2026-03-22 10:15:23,337	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_42_0 execution finished in 0.20 seconds
+2026-03-22 10:15:23,385	INFO logging.py:392 -- Registered dataset logger for dataset dataset_48_0
+2026-03-22 10:15:23,389	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_48_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:23,389	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_48_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(_heavy_udf)] -> AllToAllOperator[Sort] -> LimitOperator[limit=1000]
+2026-03-22 10:15:23,430	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_48_0 =======
+2026-03-22 10:15:23,430	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:23,430	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:23,430	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:23,431	INFO logging_progress.py:231 -- ReadRange->MapBatches(_heavy_udf): 0/1
+2026-03-22 10:15:23,432	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:23,432	INFO logging_progress.py:231 -- Sort: 0/1
+2026-03-22 10:15:23,432	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:23,432	INFO logging_progress.py:231 --     - Sort Sample: 0/1
+2026-03-22 10:15:23,432	INFO logging_progress.py:231 --     - Shuffle Map: 0/1
+2026-03-22 10:15:23,432	INFO logging_progress.py:231 --     - Shuffle Reduce: 0/1
+2026-03-22 10:15:23,433	INFO logging_progress.py:231 -- limit=1000: 0/1
+2026-03-22 10:15:23,433	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-03-22 10:15:23,433	INFO logging_progress.py:192 -- =============================================
+2026-03-22 10:15:23,847	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_48_0 execution finished in 0.46 seconds
+2026-03-22 10:15:23,876	WARNING plan.py:504 -- Warning: The Ray cluster currently does not have any available CPUs. The Dataset job will hang unless more CPUs are freed up. A common reason is that cluster resources are used by Actors or Tune trials; see the following link for more details: https://docs.ray.io/en/latest/data/data-internals.html#ray-data-and-tune
+2026-03-22 10:15:23,908	INFO logging.py:392 -- Registered dataset logger for dataset dataset_54_0
+2026-03-22 10:15:23,911	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_54_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:23,911	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_54_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(_heavy_udf)] -> AllToAllOperator[Sort] -> LimitOperator[limit=1000]
+2026-03-22 10:15:23,958	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_54_0 =======
+2026-03-22 10:15:23,958	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:23,958	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:23,958	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:23,958	INFO logging_progress.py:231 -- ReadRange->MapBatches(_heavy_udf): 0/1
+2026-03-22 10:15:23,958	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:23,958	INFO logging_progress.py:231 -- Sort: 0/1
+2026-03-22 10:15:23,958	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:23,958	INFO logging_progress.py:231 --     - Sort Sample: 0/1
+2026-03-22 10:15:23,959	INFO logging_progress.py:231 --     - Shuffle Map: 0/1
+2026-03-22 10:15:23,959	INFO logging_progress.py:231 --     - Shuffle Reduce: 0/1
+2026-03-22 10:15:23,959	INFO logging_progress.py:231 -- limit=1000: 0/1
+2026-03-22 10:15:23,959	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-03-22 10:15:23,959	INFO logging_progress.py:192 -- =============================================
+2026-03-22 10:15:24,278	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_54_0 execution finished in 0.37 seconds
+2026-03-22 10:15:24,330	INFO logging.py:392 -- Registered dataset logger for dataset dataset_60_0
+2026-03-22 10:15:24,335	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_60_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:24,335	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_60_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange] -> LimitOperator[limit=1000] -> TaskPoolMapOperator[MapBatches(_heavy_udf)] -> AllToAllOperator[Sort]
+2026-03-22 10:15:24,378	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_60_0 =======
+2026-03-22 10:15:24,378	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:24,379	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:24,379	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:24,379	INFO logging_progress.py:231 -- ReadRange: 0/1
+2026-03-22 10:15:24,379	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:24,379	INFO logging_progress.py:231 -- limit=1000: 0/1
+2026-03-22 10:15:24,379	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-03-22 10:15:24,379	INFO logging_progress.py:231 -- MapBatches(_heavy_udf): 0/1
+2026-03-22 10:15:24,379	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-03-22 10:15:24,379	INFO logging_progress.py:231 -- Sort: 0/1
+2026-03-22 10:15:24,379	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:24,379	INFO logging_progress.py:231 --     - Sort Sample: 0/1
+2026-03-22 10:15:24,379	INFO logging_progress.py:231 --     - Shuffle Map: 0/1
+2026-03-22 10:15:24,379	INFO logging_progress.py:231 --     - Shuffle Reduce: 0/1
+2026-03-22 10:15:24,379	INFO logging_progress.py:192 -- =============================================
+2026-03-22 10:15:24,493	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_60_0 execution finished in 0.16 seconds
+2026-03-22 10:15:24,552	INFO logging.py:392 -- Registered dataset logger for dataset dataset_66_0
+2026-03-22 10:15:24,556	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_66_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:24,556	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_66_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange] -> LimitOperator[limit=1000] -> TaskPoolMapOperator[MapBatches(_heavy_udf)] -> AllToAllOperator[Sort]
+2026-03-22 10:15:24,603	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_66_0 =======
+2026-03-22 10:15:24,603	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:24,603	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:24,603	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:24,603	INFO logging_progress.py:231 -- ReadRange: 0/1
+2026-03-22 10:15:24,603	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:24,603	INFO logging_progress.py:231 -- limit=1000: 0/1
+2026-03-22 10:15:24,603	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-03-22 10:15:24,603	INFO logging_progress.py:231 -- MapBatches(_heavy_udf): 0/1
+2026-03-22 10:15:24,603	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-03-22 10:15:24,603	INFO logging_progress.py:231 -- Sort: 0/1
+2026-03-22 10:15:24,603	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:24,603	INFO logging_progress.py:231 --     - Sort Sample: 0/1
+2026-03-22 10:15:24,604	INFO logging_progress.py:231 --     - Shuffle Map: 0/1
+2026-03-22 10:15:24,604	INFO logging_progress.py:231 --     - Shuffle Reduce: 0/1
+2026-03-22 10:15:24,604	INFO logging_progress.py:192 -- =============================================
+2026-03-22 10:15:24,739	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_66_0 execution finished in 0.18 seconds
+2026-03-22 10:15:24,790	INFO logging.py:392 -- Registered dataset logger for dataset dataset_72_0
+2026-03-22 10:15:24,793	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_72_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:24,793	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_72_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(_heavy_udf)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:24,827	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_72_0 =======
+2026-03-22 10:15:24,827	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:24,827	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:24,827	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:24,827	INFO logging_progress.py:231 -- ReadRange->MapBatches(_heavy_udf): 0/1
+2026-03-22 10:15:24,827	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:24,827	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:24,827	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:24,827	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:24,827	INFO logging_progress.py:192 -- =============================================
+2026-03-22 10:15:25,081	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_72_0 execution finished in 0.29 seconds
+2026-03-22 10:15:25,205	INFO logging.py:392 -- Registered dataset logger for dataset dataset_78_0
+2026-03-22 10:15:25,211	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_78_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:25,211	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_78_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(_heavy_udf)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:25,265	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_78_0 =======
+2026-03-22 10:15:25,265	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:25,265	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:25,266	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:25,266	INFO logging_progress.py:231 -- ReadRange->MapBatches(_heavy_udf): 0/1
+2026-03-22 10:15:25,266	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:25,266	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:25,266	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:25,266	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:25,266	INFO logging_progress.py:192 -- =============================================
+2026-03-22 10:15:25,436	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_78_0 execution finished in 0.22 seconds
+2026-03-22 10:15:25,522	INFO logging.py:392 -- Registered dataset logger for dataset dataset_83_0
+2026-03-22 10:15:25,525	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_83_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:25,525	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_83_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(_heavy_udf)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:25,564	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_83_0 =======
+2026-03-22 10:15:25,564	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:25,564	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:25,564	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:25,564	INFO logging_progress.py:231 -- ReadRange->MapBatches(_heavy_udf): 0/1
+2026-03-22 10:15:25,564	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:25,565	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:25,565	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:25,565	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:25,565	INFO logging_progress.py:192 -- =============================================
+2026-03-22 10:15:25,738	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_83_0 execution finished in 0.21 seconds
+2026-03-22 10:15:25,795	INFO logging.py:392 -- Registered dataset logger for dataset dataset_88_0
+2026-03-22 10:15:25,798	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_88_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:25,798	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_88_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(_heavy_udf)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:25,840	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_88_0 =======
+2026-03-22 10:15:25,840	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:25,840	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:25,841	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:25,841	INFO logging_progress.py:231 -- ReadRange->MapBatches(_heavy_udf): 0/1
+2026-03-22 10:15:25,841	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:25,841	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:25,841	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:25,841	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:25,841	INFO logging_progress.py:192 -- =============================================
+2026-03-22 10:15:26,052	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_88_0 execution finished in 0.25 seconds
+2026-03-22 10:15:26,105	INFO logging.py:392 -- Registered dataset logger for dataset dataset_94_0
+2026-03-22 10:15:26,108	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_94_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:26,108	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_94_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->Filter(<lambda>)->MapBatches(_heavy_udf)] -> AllToAllOperator[Sort]
+2026-03-22 10:15:26,157	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_94_0 =======
+2026-03-22 10:15:26,157	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:26,157	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:26,157	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:26,157	INFO logging_progress.py:231 -- Sort: 0/1
+2026-03-22 10:15:26,158	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:26,158	INFO logging_progress.py:231 --     - Sort Sample: 0/1
+2026-03-22 10:15:26,158	INFO logging_progress.py:231 --     - Shuffle Map: 0/1
+2026-03-22 10:15:26,158	INFO logging_progress.py:231 --     - Shuffle Reduce: 0/1
+2026-03-22 10:15:26,158	INFO logging_progress.py:192 -- =============================================
+2026-03-22 10:15:26,537	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_94_0 execution finished in 0.43 seconds
+2026-03-22 10:15:26,603	INFO logging.py:392 -- Registered dataset logger for dataset dataset_100_0
+2026-03-22 10:15:26,606	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_100_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:26,606	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_100_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->Filter(<lambda>)->MapBatches(_heavy_udf)] -> AllToAllOperator[Sort]
+2026-03-22 10:15:26,653	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_100_0 =======
+2026-03-22 10:15:26,653	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:26,653	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:26,653	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:26,653	INFO logging_progress.py:231 -- Sort: 0/1
+2026-03-22 10:15:26,653	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:26,653	INFO logging_progress.py:231 --     - Sort Sample: 0/1
+2026-03-22 10:15:26,653	INFO logging_progress.py:231 --     - Shuffle Map: 0/1
+2026-03-22 10:15:26,653	INFO logging_progress.py:231 --     - Shuffle Reduce: 0/1
+2026-03-22 10:15:26,653	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:27,023	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_100_0 execution finished in 0.42 seconds
+2026-03-22 10:15:27,092	INFO logging.py:392 -- Registered dataset logger for dataset dataset_106_0
+2026-03-22 10:15:27,095	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_106_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:27,095	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_106_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->Filter(<lambda>)->MapBatches(_heavy_udf)] -> AllToAllOperator[Sort]
+2026-03-22 10:15:27,146	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_106_0 =======
+2026-03-22 10:15:27,146	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:27,147	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:27,147	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:27,147	INFO logging_progress.py:231 -- Sort: 0/1
+2026-03-22 10:15:27,147	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:27,147	INFO logging_progress.py:231 --     - Sort Sample: 0/1
+2026-03-22 10:15:27,147	INFO logging_progress.py:231 --     - Shuffle Map: 0/1
+2026-03-22 10:15:27,147	INFO logging_progress.py:231 --     - Shuffle Reduce: 0/1
+2026-03-22 10:15:27,147	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:27,688	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_106_0 execution finished in 0.59 seconds
+2026-03-22 10:15:27,741	INFO logging.py:392 -- Registered dataset logger for dataset dataset_112_0
+2026-03-22 10:15:27,744	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_112_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:27,744	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_112_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->Filter(<lambda>)->MapBatches(_heavy_udf)] -> AllToAllOperator[Sort]
+2026-03-22 10:15:27,794	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_112_0 =======
+2026-03-22 10:15:27,794	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:27,794	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:27,794	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:27,794	INFO logging_progress.py:231 -- Sort: 0/1
+2026-03-22 10:15:27,794	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:27,794	INFO logging_progress.py:231 --     - Sort Sample: 0/1
+2026-03-22 10:15:27,794	INFO logging_progress.py:231 --     - Shuffle Map: 0/1
+2026-03-22 10:15:27,794	INFO logging_progress.py:231 --     - Shuffle Reduce: 0/1
+2026-03-22 10:15:27,794	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:28,236	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_112_0 execution finished in 0.49 seconds
+2026-03-22 10:15:28,301	INFO logging.py:392 -- Registered dataset logger for dataset dataset_118_0
+2026-03-22 10:15:28,304	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_118_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:28,304	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_118_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->Filter(<lambda>)->MapBatches(_heavy_udf)] -> AllToAllOperator[Sort]
+2026-03-22 10:15:28,344	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_118_0 =======
+2026-03-22 10:15:28,344	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:28,344	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:28,344	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:28,344	INFO logging_progress.py:231 -- Sort: 0/1
+2026-03-22 10:15:28,344	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:28,344	INFO logging_progress.py:231 --     - Sort Sample: 0/1
+2026-03-22 10:15:28,344	INFO logging_progress.py:231 --     - Shuffle Map: 0/1
+2026-03-22 10:15:28,345	INFO logging_progress.py:231 --     - Shuffle Reduce: 0/1
+2026-03-22 10:15:28,345	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:28,753	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_118_0 execution finished in 0.44 seconds
+2026-03-22 10:15:28,841	INFO logging.py:392 -- Registered dataset logger for dataset dataset_124_0
+2026-03-22 10:15:28,844	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_124_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:28,844	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_124_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->Filter(<lambda>)->MapBatches(_heavy_udf)] -> AllToAllOperator[Sort]
+2026-03-22 10:15:28,881	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_124_0 =======
+2026-03-22 10:15:28,881	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:28,882	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:28,882	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:28,882	INFO logging_progress.py:231 -- Sort: 0/1
+2026-03-22 10:15:28,883	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:28,883	INFO logging_progress.py:231 --     - Sort Sample: 0/1
+2026-03-22 10:15:28,883	INFO logging_progress.py:231 --     - Shuffle Map: 0/1
+2026-03-22 10:15:28,883	INFO logging_progress.py:231 --     - Shuffle Reduce: 0/1
+2026-03-22 10:15:28,883	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:29,235	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_124_0 execution finished in 0.39 seconds
+2026-03-22 10:15:29,296	INFO logging.py:392 -- Registered dataset logger for dataset dataset_130_0
+2026-03-22 10:15:29,300	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_130_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:29,300	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_130_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->Filter(<lambda>)->MapBatches(_heavy_udf)] -> AllToAllOperator[Sort]
+2026-03-22 10:15:29,338	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_130_0 =======
+2026-03-22 10:15:29,338	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:29,338	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:29,338	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:29,338	INFO logging_progress.py:231 -- Sort: 0/1
+2026-03-22 10:15:29,338	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:29,338	INFO logging_progress.py:231 --     - Sort Sample: 0/1
+2026-03-22 10:15:29,338	INFO logging_progress.py:231 --     - Shuffle Map: 0/1
+2026-03-22 10:15:29,338	INFO logging_progress.py:231 --     - Shuffle Reduce: 0/1
+2026-03-22 10:15:29,338	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:29,906	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_130_0 execution finished in 0.60 seconds
+2026-03-22 10:15:30,037	INFO logging.py:392 -- Registered dataset logger for dataset dataset_136_0
+2026-03-22 10:15:30,044	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_136_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:30,044	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_136_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->Filter(<lambda>)->MapBatches(_heavy_udf)] -> AllToAllOperator[Sort]
+2026-03-22 10:15:30,259	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_136_0 =======
+2026-03-22 10:15:30,259	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:30,260	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:30,260	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:30,260	INFO logging_progress.py:231 -- Sort: 0/1
+2026-03-22 10:15:30,260	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:30,260	INFO logging_progress.py:231 --     - Sort Sample: 0/1
+2026-03-22 10:15:30,260	INFO logging_progress.py:231 --     - Shuffle Map: 0/1
+2026-03-22 10:15:30,261	INFO logging_progress.py:231 --     - Shuffle Reduce: 0/1
+2026-03-22 10:15:30,261	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:30,820	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_136_0 execution finished in 0.77 seconds
+2026-03-22 10:15:30,886	INFO logging.py:392 -- Registered dataset logger for dataset dataset_142_0
+2026-03-22 10:15:30,890	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_142_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:30,890	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_142_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->Filter(<lambda>)->MapBatches(_heavy_udf)] -> AllToAllOperator[Sort]
+2026-03-22 10:15:30,971	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_142_0 =======
+2026-03-22 10:15:30,971	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:30,971	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:30,971	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:30,972	INFO logging_progress.py:231 -- Sort: 0/1
+2026-03-22 10:15:30,972	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:30,972	INFO logging_progress.py:231 --     - Sort Sample: 0/1
+2026-03-22 10:15:30,972	INFO logging_progress.py:231 --     - Shuffle Map: 0/1
+2026-03-22 10:15:30,972	INFO logging_progress.py:231 --     - Shuffle Reduce: 0/1
+2026-03-22 10:15:30,972	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:31,507	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_142_0 execution finished in 0.61 seconds
+2026-03-22 10:15:31,588	INFO logging.py:392 -- Registered dataset logger for dataset dataset_148_0
+2026-03-22 10:15:31,600	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_148_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:31,600	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_148_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->Filter(<lambda>)->MapBatches(_heavy_udf)] -> AllToAllOperator[Sort]
+2026-03-22 10:15:31,646	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_148_0 =======
+2026-03-22 10:15:31,646	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:31,646	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:31,647	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:31,647	INFO logging_progress.py:231 -- Sort: 0/1
+2026-03-22 10:15:31,647	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:31,647	INFO logging_progress.py:231 --     - Sort Sample: 0/1
+2026-03-22 10:15:31,647	INFO logging_progress.py:231 --     - Shuffle Map: 0/1
+2026-03-22 10:15:31,647	INFO logging_progress.py:231 --     - Shuffle Reduce: 0/1
+2026-03-22 10:15:31,647	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:32,257	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_148_0 execution finished in 0.66 seconds
+2026-03-22 10:15:32,320	INFO logging.py:392 -- Registered dataset logger for dataset dataset_153_0
+2026-03-22 10:15:32,323	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_153_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:32,323	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_153_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(<lambda>)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:32,363	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_153_0 =======
+2026-03-22 10:15:32,364	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:32,364	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:32,364	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:32,364	INFO logging_progress.py:231 -- ReadRange->MapBatches(<lambda>): 0/1
+2026-03-22 10:15:32,364	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:32,364	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:32,364	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:32,364	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:32,364	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:32,566	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_153_0 execution finished in 0.23 seconds
+2026-03-22 10:15:32,627	INFO logging.py:392 -- Registered dataset logger for dataset dataset_158_0
+2026-03-22 10:15:32,630	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_158_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:32,630	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_158_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(<lambda>)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:32,691	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_158_0 =======
+2026-03-22 10:15:32,691	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:32,691	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:32,691	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:32,691	INFO logging_progress.py:231 -- ReadRange->MapBatches(<lambda>): 0/1
+2026-03-22 10:15:32,691	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:32,691	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:32,691	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:32,691	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:32,691	INFO logging_progress.py:192 -- ==============================================
+[33m(raylet)[0m [2026-03-22 10:15:32,808 E 92422 72875766] (raylet) file_system_monitor.cc:116: /tmp/ray/session_2026-03-22_10-15-11_481973_92385 is over 95% full, available space: 2.99368 GB; capacity: 460.432 GB. Object creation will fail if spilling is required.
+2026-03-22 10:15:32,967	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_158_0 execution finished in 0.34 seconds
+2026-03-22 10:15:33,012	INFO logging.py:392 -- Registered dataset logger for dataset dataset_163_0
+2026-03-22 10:15:33,015	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_163_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:33,016	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_163_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(<lambda>)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:33,056	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_163_0 =======
+2026-03-22 10:15:33,056	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:33,056	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:33,056	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:33,056	INFO logging_progress.py:231 -- ReadRange->MapBatches(<lambda>): 0/1
+2026-03-22 10:15:33,056	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:33,056	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:33,057	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:33,057	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:33,057	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:33,256	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_163_0 execution finished in 0.24 seconds
+2026-03-22 10:15:33,319	INFO logging.py:392 -- Registered dataset logger for dataset dataset_168_0
+2026-03-22 10:15:33,324	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_168_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:33,324	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_168_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(<lambda>)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:33,388	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_168_0 =======
+2026-03-22 10:15:33,388	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:33,388	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:33,388	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:33,388	INFO logging_progress.py:231 -- ReadRange->MapBatches(<lambda>): 0/1
+2026-03-22 10:15:33,388	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:33,388	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:33,388	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:33,388	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:33,388	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:33,674	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_168_0 execution finished in 0.35 seconds
+2026-03-22 10:15:33,726	INFO logging.py:392 -- Registered dataset logger for dataset dataset_173_0
+2026-03-22 10:15:33,729	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_173_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:33,729	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_173_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(<lambda>)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:33,777	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_173_0 =======
+2026-03-22 10:15:33,777	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:33,777	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:33,777	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:33,777	INFO logging_progress.py:231 -- ReadRange->MapBatches(<lambda>): 0/1
+2026-03-22 10:15:33,777	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:33,777	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:33,777	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:33,777	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:33,777	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:34,053	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_173_0 execution finished in 0.32 seconds
+2026-03-22 10:15:34,102	INFO logging.py:392 -- Registered dataset logger for dataset dataset_178_0
+2026-03-22 10:15:34,106	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_178_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:34,106	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_178_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(<lambda>)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:34,148	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_178_0 =======
+2026-03-22 10:15:34,148	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:34,149	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:34,149	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:34,149	INFO logging_progress.py:231 -- ReadRange->MapBatches(<lambda>): 0/1
+2026-03-22 10:15:34,149	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:34,149	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:34,149	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:34,149	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:34,150	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:34,493	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_178_0 execution finished in 0.38 seconds
+2026-03-22 10:15:34,551	INFO logging.py:392 -- Registered dataset logger for dataset dataset_183_0
+2026-03-22 10:15:34,556	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_183_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:34,556	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_183_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(<lambda>)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:34,609	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_183_0 =======
+2026-03-22 10:15:34,609	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:34,609	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:34,609	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:34,610	INFO logging_progress.py:231 -- ReadRange->MapBatches(<lambda>): 0/1
+2026-03-22 10:15:34,610	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:34,610	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:34,610	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:34,610	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:34,610	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:35,176	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_183_0 execution finished in 0.62 seconds
+2026-03-22 10:15:35,359	INFO logging.py:392 -- Registered dataset logger for dataset dataset_188_0
+2026-03-22 10:15:35,368	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_188_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:35,369	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_188_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(<lambda>)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:35,496	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_188_0 =======
+2026-03-22 10:15:35,496	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:35,496	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:35,496	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:35,496	INFO logging_progress.py:231 -- ReadRange->MapBatches(<lambda>): 0/1
+2026-03-22 10:15:35,496	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:35,496	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:35,496	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:35,497	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:35,497	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:35,939	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_188_0 execution finished in 0.57 seconds
+2026-03-22 10:15:36,043	INFO logging.py:392 -- Registered dataset logger for dataset dataset_193_0
+2026-03-22 10:15:36,045	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_193_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:36,045	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_193_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(<lambda>)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:36,093	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_193_0 =======
+2026-03-22 10:15:36,093	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:36,093	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:36,093	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:36,093	INFO logging_progress.py:231 -- ReadRange->MapBatches(<lambda>): 0/1
+2026-03-22 10:15:36,093	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:36,093	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:36,093	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:36,093	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:36,094	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:36,456	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_193_0 execution finished in 0.41 seconds
+2026-03-22 10:15:36,503	INFO logging.py:392 -- Registered dataset logger for dataset dataset_198_0
+2026-03-22 10:15:36,507	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_198_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:36,507	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_198_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(<lambda>)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:36,589	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_198_0 =======
+2026-03-22 10:15:36,589	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:36,589	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:36,589	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:36,589	INFO logging_progress.py:231 -- ReadRange->MapBatches(<lambda>): 0/1
+2026-03-22 10:15:36,589	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:36,589	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:36,589	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:36,589	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:36,590	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:37,190	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_198_0 execution finished in 0.68 seconds
+2026-03-22 10:15:37,269	INFO logging.py:392 -- Registered dataset logger for dataset dataset_203_0
+2026-03-22 10:15:37,279	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_203_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:37,279	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_203_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(<lambda>)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:37,332	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_203_0 =======
+2026-03-22 10:15:37,332	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:37,332	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:37,332	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:37,333	INFO logging_progress.py:231 -- ReadRange->MapBatches(<lambda>): 0/1
+2026-03-22 10:15:37,333	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:37,333	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:37,333	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:37,333	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:37,333	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:38,010	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_203_0 execution finished in 0.73 seconds
+2026-03-22 10:15:38,113	INFO logging.py:392 -- Registered dataset logger for dataset dataset_208_0
+2026-03-22 10:15:38,120	INFO streaming_executor.py:182 -- Starting execution of Dataset dataset_208_0. Full logs are in /tmp/ray/session_2026-03-22_10-15-11_481973_92385/logs/ray-data
+2026-03-22 10:15:38,120	INFO streaming_executor.py:183 -- Execution plan of Dataset dataset_208_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->MapBatches(<lambda>)] -> AllToAllOperator[Repartition]
+2026-03-22 10:15:38,174	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_208_0 =======
+2026-03-22 10:15:38,174	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-03-22 10:15:38,175	INFO logging_progress.py:227 -- Active & requested resources: 0/8 CPU, 0.0B/1.0GiB object store
+2026-03-22 10:15:38,175	INFO logging_progress.py:181 -- 
+2026-03-22 10:15:38,175	INFO logging_progress.py:231 -- ReadRange->MapBatches(<lambda>): 0/1
+2026-03-22 10:15:38,175	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 15 (0.0B); Resources: 1.0 CPU, 384.0MiB object store
+2026-03-22 10:15:38,175	INFO logging_progress.py:231 -- Repartition: 0/1
+2026-03-22 10:15:38,175	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store; 0 rows output
+2026-03-22 10:15:38,175	INFO logging_progress.py:231 --     - Split Repartition: 0/1
+2026-03-22 10:15:38,175	INFO logging_progress.py:192 -- ==============================================
+2026-03-22 10:15:38,747	INFO streaming_executor.py:300 -- ✔️  Dataset dataset_208_0 execution finished in 0.63 seconds
+  [OperatorFusion] Running ...
+  [OperatorFusion] baseline=2.348s  optimized=0.311s  delta=+86.8%
+  [PredicatePushdown] Running ...
+  [PredicatePushdown] baseline=0.548s  optimized=0.231s  delta=+57.9%
+  [LimitPushdown] Running ...
+  [LimitPushdown] baseline=0.450s  optimized=0.199s  delta=+55.7%
+  [CombineShuffles] Running ...
+  [CombineShuffles] baseline=0.316s  optimized=0.265s  delta=+16.1%
+  [DeriveReservationRatio] Running ...
+  [DeriveReservationRatio] baseline=0.453s  optimized=0.453s  delta=+0.0%
+  [DeriveShufflePartitions] Running ...
+  [DeriveShufflePartitions] baseline=0.579s  optimized=0.325s  delta=+43.9%
+========================================================================================
+  Ray Data Optimization Rules - Per-Rule Benchmark Results
+========================================================================================
+  Config: 100,000 rows x 2 rep(s)
+
+  Rule                       Type  Goal         Baseline  Optimized   Improv.
+  ------------------------------------------------------------------------------------
+  OperatorFusion              RBO  Throughput     2.348s     0.311s +   86.8%
+  PredicatePushdown           RBO  Throughput     0.548s     0.231s +   57.9%
+  LimitPushdown               RBO  Throughput     0.450s     0.199s +   55.7%
+  CombineShuffles             RBO  Throughput     0.316s     0.265s +   16.1%
+  DeriveReservationRatio      CBO  Resource       0.453s     0.453s +    0.0%
+  DeriveShufflePartitions     CBO  Resource       0.579s     0.325s +   43.9%
+  ------------------------------------------------------------------------------------
+
+  Legend:
+    OperatorFusion             range->map(x2)->map(+1)->map(heavy)
+                               baseline: No fusion | optimized: Fused
+    PredicatePushdown          range->[filter <-> map(heavy)]
+                               baseline: Filter after map | optimized: Filter before map
+    LimitPushdown              range(100000)->[limit(1000) <-> map+sort]
+                               baseline: Limit after map+sort | optimized: Limit before map+sort
+    CombineShuffles            map->repart(32)->repart(16) vs map->repart(16)
+                               baseline: Double repart | optimized: Single repart
+    DeriveReservationRatio     filter->map->sort @ sweep R
+                               baseline: R=0.5 | optimized: R=0.5
+    DeriveShufflePartitions    map->repart(N) @ sweep N
+                               baseline: N=64 | optimized: N=4
+
+  DeriveReservationRatio - Parameter Sweep:
+    Ratio          Time (s)    vs Default
+    ---------------------------------------
+    0.10              0.460         +1.5%
+    0.30              0.573        +26.5%
+    0.50              0.453         +0.0%  (default)
+    0.70              0.760        +67.8%
+    0.90              0.691        +52.5%
+
+  DeriveShufflePartitions - Parameter Sweep:
+    N parts        Time (s)    vs Default
+    ---------------------------------------
+    4                 0.325        -43.9%  <- best
+    8                 0.334        -42.3%
+    16                0.384        -33.7%
+    32                0.682        +17.8%
+    64                0.579         +0.0%  (default)
+    128               0.773        +33.5%
+
+========================================================================================
+
+Full results written to /Users/windwheel/Documents/gitrepo/ray/cbo_per_rule_results.json

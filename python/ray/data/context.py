@@ -212,6 +212,10 @@ DEFAULT_OP_RESOURCE_RESERVATION_RATIO = float(
     os.environ.get("RAY_DATA_OP_RESERVATION_RATIO", "0.5")
 )
 
+DEFAULT_ENABLE_COST_BASED_OPTIMIZATION = env_bool(
+    "RAY_DATA_ENABLE_COST_BASED_OPTIMIZATION", True
+)
+
 DEFAULT_MAX_ERRORED_BLOCKS = 0
 
 # Use this to prefix important warning messages for the user.
@@ -651,6 +655,9 @@ class DataContext:
     actor_init_max_retries: int = DEFAULT_ACTOR_INIT_MAX_RETRIES
     op_resource_reservation_enabled: bool = DEFAULT_ENABLE_OP_RESOURCE_RESERVATION
     op_resource_reservation_ratio: float = DEFAULT_OP_RESOURCE_RESERVATION_RATIO
+    # CBO (Cost-Based Optimizer) configuration
+    enable_cost_based_optimization: bool = DEFAULT_ENABLE_COST_BASED_OPTIMIZATION
+    _user_set_reservation_ratio: bool = False
     max_errored_blocks: int = DEFAULT_MAX_ERRORED_BLOCKS
     log_internal_stack_trace_to_stdout: bool = (
         DEFAULT_LOG_INTERNAL_STACK_TRACE_TO_STDOUT
